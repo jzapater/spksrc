@@ -6,13 +6,18 @@ DNAME="Domoticz"
 
 # Others
 INSTALL_DIR="/usr/local/${PACKAGE}"
-PATH="${INSTALL_DIR}/bin:/usr/local/bin:/bin:/usr/bin:/usr/syno/bin:/usr/local/sbin"
+PATH="${INSTALL_DIR}:/usr/local/bin:/bin:/usr/bin:/usr/syno/bin:/usr/local/sbin"
 USER="root"
-DOMOTICZ="${INSTALL_DIR}/bin/domoticz"
+DOMOTICZ="${INSTALL_DIR}/domoticz"
+PID_FILE="${INSTALL_DIR}/var/domoticz.pid"
+LOGFILE="${INSTALL_DIR}/var/domoticz.log"
+PORT="8084"
 
 start_daemon ()
 {
-    exit 1
+    su - ${USER} -c "${DOMOTICZ} -www ${PORT}" &> $LOGFILE &
+    pid=$!
+    echo $pid > ${PID_FILE}
 }
 
 stop_daemon ()

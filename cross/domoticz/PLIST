@@ -1,1 +1,4 @@
-bin:bin/domoticz
+bin:domoticz
+rsh:svnversion.h
+rsh:www
+rsh:scripts
