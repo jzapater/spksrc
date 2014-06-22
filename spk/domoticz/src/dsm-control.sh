@@ -6,7 +6,7 @@ DNAME="Domoticz"
 
 # Others
 INSTALL_DIR="/usr/local/${PACKAGE}"
-PATH="${INSTALL_DIR}:/usr/local/bin:/bin:/usr/bin:/usr/syno/bin:/usr/local/sbin"
+PATH="${INSTALL_DIR}:${PATH}"
 USER="root"
 DOMOTICZ="${INSTALL_DIR}/domoticz"
 PID_FILE="${INSTALL_DIR}/var/domoticz.pid"

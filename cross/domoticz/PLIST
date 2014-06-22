@@ -2,3 +2,4 @@ bin:domoticz
 rsh:svnversion.h
 rsh:www
 rsh:scripts
+rsh:var

@@ -1,8 +1,0 @@
---- hardware/Teleinfo.cpp	2014-06-12 22:19:12.000000000 +0200
-+++ hardware/Teleinfo.cpp	2014-06-12 08:08:18.000000000 +0200
-@@ -1,4 +1,4 @@
--﻿/* 
-+/* 
- 	Domoticz Software : http://domoticz.com/
- 	File : Teleinfo.cpp
- 	Author : Nicolas HILAIRE

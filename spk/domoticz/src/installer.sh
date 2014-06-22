@@ -25,9 +25,6 @@ postinst ()
     # Correct the files ownership
     chown -R ${USER}:root ${SYNOPKG_PKGDEST}
 
-    # Make /var directory
-    mkdir ${INSTALL_DIR}/var
-
     exit 0
 }
 
