@@ -1,5 +1,5 @@
 SPK_NAME = domoticz
-SPK_VERS = 1809
+SPK_VERS = 1812
 SPK_REV = 1
 SPK_ICON = src/domoticz.png
 

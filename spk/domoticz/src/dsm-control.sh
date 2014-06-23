@@ -6,18 +6,17 @@ DNAME="Domoticz"
 
 # Others
 INSTALL_DIR="/usr/local/${PACKAGE}"
-PATH="${INSTALL_DIR}:${PATH}"
+PATH="${INSTALL_DIR}/bin:${PATH}"
 USER="root"
-DOMOTICZ="${INSTALL_DIR}/domoticz"
+DOMOTICZ="${INSTALL_DIR}/bin/domoticz"
 PID_FILE="${INSTALL_DIR}/var/domoticz.pid"
 LOGFILE="${INSTALL_DIR}/var/domoticz.log"
+APPROOT="${INSTALL_DIR}/"
 PORT="8084"
 
 start_daemon ()
 {
-    su - ${USER} -c "${DOMOTICZ} -www ${PORT}" &> $LOGFILE &
-    pid=$!
-    echo $pid > ${PID_FILE}
+    su - ${USER} -c "${DOMOTICZ} -www ${PORT} -approot ${APPROOT} &> $LOGFILE & echo \$! > ${PID_FILE}"
 }
 
 stop_daemon ()
@@ -78,6 +77,10 @@ case $1 in
             echo ${DNAME} is not running
             exit 1
         fi
+        ;;
+    log)
+        echo ${LOGFILE}
+        exit 0
         ;;
     *)
         exit 1
