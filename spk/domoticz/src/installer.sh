@@ -7,13 +7,13 @@ DNAME="Domoticz"
 # Others
 INSTALL_DIR="/usr/local/${PACKAGE}"
 SSS="/var/packages/${PACKAGE}/scripts/start-stop-status"
-PATH="${INSTALL_DIR}/bin:/usr/local/bin:/bin:/usr/bin:/usr/syno/bin:/usr/local/sbin"
+PATH="${INSTALL_DIR}/bin:${PATH}"
 USER="domoticz"
 GROUP="users"
 TMP_DIR="${SYNOPKG_PKGDEST}/../../@tmp"
 
 SERVICETOOL="/usr/syno/bin/servicetool"
-FWPORTS="/var/packages/{PACKAGE}/scripts/${PACKAGE}.sc"
+FWPORTS="/var/packages/${PACKAGE}/scripts/${PACKAGE}.sc"
 
 preinst ()
 {
