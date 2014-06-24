@@ -1,4 +1,4 @@
-[headphones]
+[domoticz]
 title="Domoticz"
 desc="Domoticz"
 port_forward="yes"
