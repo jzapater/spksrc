@@ -26,7 +26,7 @@ postinst ()
     ln -s ${SYNOPKG_PKGDEST} ${INSTALL_DIR}
 
     # Create user
-    adduser -h ${INSTALL_DIR}/var -g "${DNAME} User" -G {GROUP} -s /bin/sh -S -D ${USER}
+    adduser -h ${INSTALL_DIR}/var -g "${DNAME} User" -G ${GROUP} -s /bin/sh -S -D ${USER}
 
     # Correct the files ownership
     chown -R ${USER}:root ${SYNOPKG_PKGDEST}
