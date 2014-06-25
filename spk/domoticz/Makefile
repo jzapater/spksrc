@@ -12,7 +12,7 @@ DESCRIPTION_FRE = Domoticz est un système domotique qui vous permet de surveill
 ADMIN_PORT = 8084
 RELOAD_UI = yes
 DISPLAY_NAME = Domoticz
-CHANGELOG = "1. update to svn revision 1812\n2. make Domoticz a proper app in DSM"
+CHANGELOG = "1. update to svn revision 1812<br>2. make Domoticz a proper app in DSM"
 
 HOMEPAGE = http://www.domoticz.com/
 LICENSE  = 
