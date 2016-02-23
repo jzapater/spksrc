@@ -1,6 +1,14 @@
 bin:bin/domoticz
+<<<<<<< HEAD
 rsh:svnversion.h
 rsh:www
 rsh:Config
 rsh:scripts
 rsh:var
+=======
+rsc:svnversion.h
+rsc:www
+rsc:Config
+rsc:scripts
+rsc:var
+>>>>>>> origin/master

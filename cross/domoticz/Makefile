@@ -2,8 +2,13 @@ PKG_NAME = domoticz
 PKG_VERS = $(PKG_SVN_REV)
 PKG_EXT = tar.gz
 PKG_DOWNLOAD_METHOD = svn
+<<<<<<< HEAD
 PKG_SVN_REV = 1853
 PKG_DIST_NAME = domoticz
+=======
+PKG_SVN_REV = 2284
+PKG_DIST_NAME = trunk
+>>>>>>> origin/master
 PKG_DIST_SITE = svn://svn.code.sf.net/p/domoticz/code
 PKG_DIST_FILE = $(PKG_NAME)-r$(PKG_SVN_REV).$(PKG_EXT)
 PKG_DIR = $(PKG_NAME)-r*

@@ -1,28 +1,22 @@
 SPK_NAME = mono
-SPK_VERS = 3.4.0
-SPK_REV = 1
+SPK_VERS = 4.2.1.102
+SPK_REV = 6
 SPK_ICON = src/mono.png
-
 BETA = 1
-
-FIRMWARE = 4.0-2198
 
 DEPENDS = cross/$(SPK_NAME)
 
 MAINTAINER = SynoCommunity
-DESCRIPTION = Mono is a software platform designed to allow developers to easily create cross platform applications. It is an open source implementation of Microsofts .Net Framework based on the ECMA standards for C# and the Common Language Runtime. We feel that by embracing a successful, standardized software platform, we can lower the barriers to producing great applications for Linux.
-DESCRIPTION_FRE = Mono est une plateforme logicielle conçue pour permettre aux développeurs de créer facilement des applications multiplateformes. Il s agit d une mise en œuvre de Microsofts. Net Framework basé sur les normes ECMA pour C # et le Common Language Runtime open source. Nous pensons qu'en adoptant une plate-forme de logiciel de succès, standardisé, nous pouvons réduire les obstacles à la production de grandes applications pour Linux.
-DESCRIPTION_SPN = Mono es una plataforma de software diseñada para permitir a los desarrolladores crear fácilmente aplicaciones de plataforma cruzada. Es una implementación de código abierto de Microsoft de. Net Framework basado en los estándares ECMA para C # y el Common Language Runtime. Creemos que al abrazar una exitosa plataforma de software estandarizada, podemos bajar las barreras a la producción de grandes aplicaciones para Linux.
-RELOAD_UI = yes
+DESCRIPTION = Cross platform, open source .NET development framework
 DISPLAY_NAME = Mono
-CHANGELOG = "1. Initial release"
+STARTABLE = no
+CHANGELOG = "Update to 4.2.1.102"
 
-HOMEPAGE = http://mono-project.com/
-LICENSE  =
+HOMEPAGE = http://mono-project.com
+LICENSE  = http://www.mono-project.com/docs/faq/licensing
 
 INSTALLER_SCRIPT = src/installer.sh
 SSS_SCRIPT       = src/dsm-control.sh
-ADDITIONAL_SCRIPTS =
 
 INSTALL_PREFIX = /usr/local/$(SPK_NAME)
 
@@ -38,14 +32,8 @@ include ../../mk/spksrc.spk.mk
 .PHONY: mono_extra_install
 mono_extra_install:
 	install -m 755 -d $(STAGING_DIR)/lib
-	tar -cpf - -C $(MONO_NATIVE_INSTALL)/usr/local/lib . | tar -xpkf - -C $(STAGING_DIR)/lib
+	cp -nR $(MONO_NATIVE_INSTALL)/usr/local/lib $(STAGING_DIR)/
 	install -m 755 -d $(STAGING_DIR)/etc/mono
-	tar -cpf - -C $(MONO_NATIVE_INSTALL)/usr/local/etc/mono . | tar -xpkf - -C $(STAGING_DIR)/etc/mono
-	install -m 755 -d $(STAGING_DIR)/var
-	install -m 755 -d $(STAGING_DIR)/app
-	install -m 755 -d $(STAGING_DIR)/app/images
-	for size in 16 24 32 48 72 ; \
-	do \
-	    convert $(SPK_ICON) -thumbnail $${size}x$${size} \
-	            $(STAGING_DIR)/app/images/$(SPK_NAME)-$${size}.png ; \
-	done
+	cp -nR $(MONO_NATIVE_INSTALL)/usr/local/etc/mono $(STAGING_DIR)/etc/
+	install -m 755 -d $(STAGING_DIR)/bin
+	cp -nR $(MONO_NATIVE_INSTALL)/usr/local/bin $(STAGING_DIR)/

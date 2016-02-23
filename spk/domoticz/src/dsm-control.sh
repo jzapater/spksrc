@@ -12,12 +12,19 @@ DOMOTICZ="${INSTALL_DIR}/bin/domoticz"
 PID_FILE="${INSTALL_DIR}/var/domoticz.pid"
 LOGFILE="${INSTALL_DIR}/var/domoticz.log"
 DB_FILE="${INSTALL_DIR}/var/domoticz.db"
+<<<<<<< HEAD
 APPROOT="${INSTALL_DIR}/"
+=======
+>>>>>>> origin/master
 PORT="8084"
 
 start_daemon ()
 {
+<<<<<<< HEAD
     su - ${USER} -c "${DOMOTICZ} -www ${PORT} -approot ${APPROOT} -dbase ${DB_FILE} &> $LOGFILE & echo \$! > ${PID_FILE}"
+=======
+    su - ${USER} -c "${DOMOTICZ} -www ${PORT} -approot ${INSTALL_DIR}/ -dbase ${DB_FILE} &> $LOGFILE & echo \$! > ${PID_FILE}"
+>>>>>>> origin/master
 }
 
 stop_daemon ()
